@@ -1,5 +1,6 @@
 <img alt="logo" src="http://www.amihaiemil.com/images/logo_mic_js.PNG" width="60" height="60"/>
 # charles-search-box
+[![Build Status](https://travis-ci.org/amihaiemil/charles-search-box.svg?branch=master)](https://travis-ci.org/amihaiemil/charles-search-box)
 ReactJS search box component
 
 Component for search designed to call two REST endpoints: one for search and one for autocomplete.
