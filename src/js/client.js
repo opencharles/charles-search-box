@@ -1,7 +1,12 @@
 import React from "react";
 import ReactDOM from "react-dom";
 
-import Layout from "./components/Layout";
+import Search from "./components/Search";
 
-const app = document.getElementById('app');
-ReactDOM.render(<Layout/>, app);
+var searchBox = document.getElementById("searchBox");
+if(searchBox == null) {
+    searchBox = document.createElement("div");
+    searchBox.setAttribute("id", "searchBox");
+    document.body.appendChild(searchBox);
+}
+ReactDOM.render(<Search/>, searchBox);
