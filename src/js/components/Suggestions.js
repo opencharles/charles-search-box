@@ -6,16 +6,24 @@ import React from "react";
  */
 export default class Suggestions extends React.Component {
 
+  /**
+   * If the user clicks on a suggestion, add it to the input field.
+   */
+  handleClick(e) {
+    console.log("CLICK EVENT ON SUGGESTION!");
+    this.props.selectSuggestion(e.target.innerHTML);
+  }
+
   render() {
     var suggestions = [];
     for (var i = 0; i < this.props.list.length; i++) {
         suggestions.push(
-         <li id={"suggestion" + i}>{this.props.list[i]}</li>
+         <li onClick={this.handleClick.bind(this)} className={"content-suggesstion-entry"} id={"suggestion" + i} key={"suggestion" + i}>{this.props.list[i]}</li>
        );
     }
     return (
       suggestions.length > 0 ?
-          <ul id="suggestions">
+          <ul className={"suggestionGroupClass"} id="suggestions">
               {
                 suggestions.map(
                   function(suggestion){
