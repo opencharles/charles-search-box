@@ -1,7 +1,6 @@
 import React from "react";
 
 import Input from "./Input";
-import Suggestions from "./Suggestions";
 var $ = require('jquery');
 
 /**
@@ -19,22 +18,6 @@ export default class Search extends React.Component {
       suggestions: [],
       keywords: ""
     };
-  }
-
-  /**
-   * Set a suggested string as the value of the input field.
-   */
-  selectSuggestion(suggestion) {
-    console.log("INSIDE SELECT SUGGESTION");
-    if(suggestion.length > 0) {
-      console.log("INSIDE SELECT SUGGESTION if()");
-      this.setState(
-        {
-          keywords: suggestion
-        }
-      );
-      console.log(this.state.keywords);
-    }
   }
 
   /**
@@ -83,16 +66,14 @@ export default class Search extends React.Component {
          }
        );
     }
-    console.log(this.state);
   }
 
   render() {
     return (
       <div>
-        <Input keywords={this.state.keywords} getSuggestions={this.getSuggestions.bind(this)}/>
-        <Suggestions
-          selectSuggestion={this.selectSuggestion.bind(this)}
-          list={this.state.suggestions}
+        <Input
+          getSuggestions={this.getSuggestions.bind(this)}
+          suggestions={this.state.suggestions}
         />
       </div>
     );

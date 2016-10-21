@@ -1,10 +1,32 @@
 import React from "react";
+
+import Suggestions from "./Suggestions";
 var $ = require('jquery');
 
 /**
  * Input field where the user enters the keywords for search.
  */
 export default class Input extends React.Component {
+
+    constructor() {
+      super();
+      this.state = {
+        keywords: ""
+      };
+    }
+
+    /**
+     * Set a suggested string as the value of the input field.
+     */
+    selectSuggestion(suggestion) {
+      if(suggestion.length > 0) {
+        this.setState(
+          {
+            keywords: suggestion
+          }
+        );
+      }
+    }
 
     /**
      * Handle the event of key up on the input field.
@@ -53,21 +75,43 @@ export default class Input extends React.Component {
             }
           }
         } else {
-          //user pressed enter, perform the search.
+          this.enterPressed(e);
         }
       }
     }
 
+    /**
+     * Handles the event where 'enter' key was pressed on this input field.
+     */
+    enterPressed(e) {
+
+    }
+
+    /**
+     * Handle onChange event.
+     */
+    handleChange(e){
+      this.setState (
+        {
+          keywords: e.target.value
+        }
+      );
+    }
+
     render() {
-      var kw = this.props.keywords;
+      //var kw = this.props.keywords;
       return (
         <div>
           {
-            kw.length == 0 ?
-              <input placeholder="Search..." onKeyUp={this.handleKeyUp.bind(this)}/>
+            this.state.keywords.length == 0 ?
+              <input placeholder="Search..." onKeyUp={this.handleKeyUp.bind(this)} onChange={this.handleChange.bind(this)}/>
             :
-              <input defaultValue={kw} onKeyUp={this.handleKeyUp.bind(this)}/>
+              <input value={this.state.keywords} onKeyUp={this.handleKeyUp.bind(this)} onChange={this.handleChange.bind(this)}/>
           }
+          <Suggestions
+            selectSuggestion={this.selectSuggestion.bind(this)}
+            list={this.props.suggestions}
+          />
         </div>
        );
     }
