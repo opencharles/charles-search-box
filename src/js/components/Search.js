@@ -1,6 +1,8 @@
 import React from "react";
 
 import Input from "./Input";
+import FontAwesome from 'react-fontawesome';
+
 var $ = require('jquery');
 
 /**
@@ -75,6 +77,7 @@ export default class Search extends React.Component {
           getSuggestions={this.getSuggestions.bind(this)}
           suggestions={this.state.suggestions}
         />
+        <FontAwesome name="rocket"/>
       </div>
     );
   }

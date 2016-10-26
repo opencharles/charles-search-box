@@ -1,5 +1,17 @@
-.content-suggesstion-container {
-	display: none;
+#charles-search-field {
+    height: 30px;
+    line-height: 32px;
+    width: 175px;
+    float: right;
+		margin-top:50px;
+		margin-right:200px;
+    padding: 0 10px 0 10px;
+    border: 1px solid #369;
+    -webkit-box-shadow: inset 1px 2px 6px -1px #CCC;
+    -moz-box-shadow: inset 1px 2px 6px -1px #CCC;
+    box-shadow: inset 1px 2px 6px -1px #CCC;
+}
+.suggestionGroupClass {
 	position: absolute;
 	z-index: 9999;
 	overflow: hidden;

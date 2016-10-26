@@ -2,7 +2,6 @@ import React from "react";
 
 import Suggestions from "./Suggestions";
 var $ = require('jquery');
-
 /**
  * Input field where the user enters the keywords for search.
  */
@@ -25,6 +24,7 @@ export default class Input extends React.Component {
             keywords: suggestion
           }
         );
+        this.props.getSuggestions('');
       }
     }
 
@@ -84,7 +84,26 @@ export default class Input extends React.Component {
      * Handles the event where 'enter' key was pressed on this input field.
      */
     enterPressed(e) {
-
+        var query = '';
+        if($(".active-suggestion-item") != null) {
+          query = $(".active-suggestion-item").text();
+          this.setState (
+            {
+              keywords: query
+            }
+          );
+          this.props.getSuggestions('');
+        } else {
+          if($(".suggestionGroupClass")) {
+            this.props.getSuggestions('');
+          }
+          if(this.state.keywords != '') {
+            query = this.state.keywords;
+          }
+        }
+        if(query.length > 0) {
+          //... do the search ajax call here ...
+        }
     }
 
     /**
@@ -99,14 +118,20 @@ export default class Input extends React.Component {
     }
 
     render() {
-      //var kw = this.props.keywords;
       return (
         <div>
           {
             this.state.keywords.length == 0 ?
-              <input placeholder="Search..." onKeyUp={this.handleKeyUp.bind(this)} onChange={this.handleChange.bind(this)}/>
+              <input
+                id="charles-search-field" placeholder="Search..."
+                onKeyUp={this.handleKeyUp.bind(this)} onChange={this.handleChange.bind(this)}
+                autoComplete="off"
+              />
             :
-              <input value={this.state.keywords} onKeyUp={this.handleKeyUp.bind(this)} onChange={this.handleChange.bind(this)}/>
+              <input id="charles-search-field" value={this.state.keywords}
+                onKeyUp={this.handleKeyUp.bind(this)} onChange={this.handleChange.bind(this)}
+                autoComplete="off"
+              />
           }
           <Suggestions
             selectSuggestion={this.selectSuggestion.bind(this)}
