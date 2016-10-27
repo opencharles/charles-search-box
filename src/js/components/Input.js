@@ -1,40 +1,146 @@
 import React from "react";
+
 import Suggestions from "./Suggestions";
+var FaSearch = require('react-icons/lib/fa/search');
+var $ = require('jquery');
 
 /**
  * Input field where the user enters the keywords for search.
  */
 export default class Input extends React.Component {
+
     constructor() {
       super();
       this.state = {
-        suggestionsList: [],
+        keywords: ""
       };
     }
-    handleChange(e) {
+
+    /**
+     * Set a suggested string as the value of the input field.
+     */
+    selectSuggestion(suggestion) {
+      if(suggestion.length > 0) {
+        this.setState(
+          {
+            keywords: suggestion
+          }
+        );
+        this.props.getSuggestions('');
+      }
+    }
+
+    /**
+     * Handle the event of key up on the input field.
+     */
+    handleKeyUp(e) {
+      if (
+        e.keyCode != 13 && e.keyCode != 40 && e.keyCode != 38 &&
+        e.keyCode != 37 && e.keyCode != 39
+      ) {
         const input = e.target.value;
-        if(input.length >= 3) {
-          //make call to REST endpoint for autocomplete and set
-          //the suggestionsList
-          this.setState(
-           {
-             suggestionsList: ['suggestiona', 'suggestionb', 'suggestionc']
-           }
-          );
+        this.props.getSuggestions(input);
+      } else {
+        if(e.keyCode != 13)  {
+          var suggestionsContainer = $(".suggestionGroupClass");
+          if(suggestionsContainer != null) {//if we don't have some suggestions displayed, it makes no sense to go further
+            //console.log(e.keyCode);
+            switch (e.keyCode) {
+              case 38://up arrow pressed
+                var activeItem = suggestionsContainer.find('.active-suggestion-item');
+                if (activeItem.length == 0) {
+                  suggestionsContainer.children().last().addClass("active-suggestion-item");
+                } else {
+                  var prevItem = activeItem.prev();
+                  activeItem.removeClass("active-suggestion-item");
+                  if (prevItem.length == 0) {
+                    suggestionsContainer.children().last().addClass("active-suggestion-item");
+                  } else {
+                    prevItem.addClass("active-suggestion-item");
+                  }
+                }
+                break;
+              case 40://down arrow pressed
+                var activeItem = suggestionsContainer.find('.active-suggestion-item');
+                if (activeItem.length == 0) {
+                  suggestionsContainer.children().first().addClass("active-suggestion-item");
+                } else {
+                  var nextItem = activeItem.next();
+                  activeItem.removeClass("active-suggestion-item");
+                  if (nextItem.length == 0) {
+                    suggestionsContainer.children().first().addClass("active-suggestion-item");
+                  } else {
+                    nextItem.addClass("active-suggestion-item");
+                  }
+                }
+                break;
+            }
+          }
         } else {
-          this.setState(
-           {
-             suggestionsList: []
-           }
-          );
+          this.enterPressed(e);
         }
+      }
+    }
+
+    /**
+     * Handles the event where 'enter' key was pressed on this input field.
+     */
+    enterPressed(e) {
+        var query = '';
+        var activeSuggestion = $(".active-suggestion-item").text();
+        if(activeSuggestion != '') {
+          query = activeSuggestion;
+          this.setState (
+            {
+              keywords: query
+            }
+          );
+          this.props.getSuggestions('');
+        } else {
+          if($(".suggestionGroupClass")) {
+            this.props.getSuggestions('');
+          }
+          if(this.state.keywords != '') {
+            query = this.state.keywords;
+          }
+        }
+        if(query.length > 0) {
+          //... do the search ajax call here ...
+        }
+    }
+
+    /**
+     * Handle onChange event.
+     */
+    handleChange(e){
+      this.setState (
+        {
+          keywords: e.target.value
+        }
+      );
     }
 
     render() {
       return (
-        <div>
-          <input placeholder="Search..." onChange={this.handleChange.bind(this)} />
-          <Suggestions list={this.state.suggestionsList}/>
+        <div id="charles-search-wrapper">
+          <FaSearch/>
+          {
+            this.state.keywords.length == 0 ?
+              <input
+                id="charles-search-field" placeholder="Search..."
+                onKeyUp={this.handleKeyUp.bind(this)} onChange={this.handleChange.bind(this)}
+                autoComplete="off"
+              />
+            :
+              <input id="charles-search-field" value={this.state.keywords}
+                onKeyUp={this.handleKeyUp.bind(this)} onChange={this.handleChange.bind(this)}
+                autoComplete="off"
+              />
+          }
+          <Suggestions
+            selectSuggestion={this.selectSuggestion.bind(this)}
+            list={this.props.suggestions}
+          />
         </div>
        );
     }
