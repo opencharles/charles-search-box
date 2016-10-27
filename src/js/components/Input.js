@@ -1,7 +1,9 @@
 import React from "react";
 
 import Suggestions from "./Suggestions";
+var FaSearch = require('react-icons/lib/fa/search');
 var $ = require('jquery');
+
 /**
  * Input field where the user enters the keywords for search.
  */
@@ -85,8 +87,9 @@ export default class Input extends React.Component {
      */
     enterPressed(e) {
         var query = '';
-        if($(".active-suggestion-item") != null) {
-          query = $(".active-suggestion-item").text();
+        var activeSuggestion = $(".active-suggestion-item").text();
+        if(activeSuggestion != '') {
+          query = activeSuggestion;
           this.setState (
             {
               keywords: query
@@ -119,7 +122,8 @@ export default class Input extends React.Component {
 
     render() {
       return (
-        <div>
+        <div id="charles-search-wrapper">
+          <FaSearch/>
           {
             this.state.keywords.length == 0 ?
               <input

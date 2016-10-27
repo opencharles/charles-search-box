@@ -1,10 +1,13 @@
+#charles-search-wrapper {
+    float: right;
+}
 #charles-search-field {
     height: 30px;
     line-height: 32px;
     width: 175px;
-    float: right;
 		margin-top:50px;
 		margin-right:200px;
+    margin-left:5px;
     padding: 0 10px 0 10px;
     border: 1px solid #369;
     -webkit-box-shadow: inset 1px 2px 6px -1px #CCC;
