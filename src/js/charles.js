@@ -10,6 +10,9 @@ if(searchDiv == null) {
     document.body.appendChild(searchDiv);
 }
 
+/**
+ * Get the query params from the src url.
+ */
 function getQueryStringParams(url) {
     var queryStringParams = url.substring(url.indexOf("?") + 1, url.length).split('&');
     var result = {}, s2, i;
