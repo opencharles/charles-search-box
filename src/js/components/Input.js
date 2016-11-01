@@ -27,6 +27,7 @@ export default class Input extends React.Component {
           }
         );
         this.props.getSuggestions('');
+        this.props.getSearchResults(this.state.keywords);
       }
     }
 
@@ -105,7 +106,7 @@ export default class Input extends React.Component {
           }
         }
         if(query.length > 0) {
-          //... do the search ajax call here ...
+          this.props.getSearchResults(query);
         }
     }
 
