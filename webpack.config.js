@@ -8,7 +8,7 @@ module.exports = {
   devServer:{
         contentBase: 'src'
   },
-  entry: "./js/client.js",
+  entry: "./js/charles.js",
   module: {
     loaders: [
       {
@@ -24,7 +24,7 @@ module.exports = {
   },
   output: {
     path: path.resolve(__dirname, 'src/'),
-    filename: "client.min.js"
+    filename: "charles.min.js"
   },
   plugins: debug ? [] : [
     new webpack.optimize.DedupePlugin(),

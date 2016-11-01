@@ -4,7 +4,7 @@
 	"facetsList": "{\"0\":{\"subnodes\":{\"Geschäftskunden\":36,\"Privatkunden\":68},\"count\":\"104\",\"name\":\"category\"}}",
 	"nextPage": "http:/localhost:8080/rest/testSearch?searchString=uniqa&startIndex=10&nrResults=10&lang=de",
 	"previousPage": " - ",
-	"results": [{
+	"res": [{
 		"title": "Spezialisten Krankenversicherung",
 		"link": "/versicherung/cms/geschaeftskunden/gesundheit/Spezialisten_Krankenversicherung.de.html",
 		"text": " ...alexander.dawid@<b>uniqa.at</b> Landesdirektion Niederösterreich: Gerhard Mach Tel: 02742/894-403 E-Mail: gerhard.mach@<b>uniqa.at</b> Landesdirektion Oberösterreich: Dr. Ewald Kirchmayr Tel: 0732/6905-400 E-Mail: ewald.kirchmayr@<b>uniqa.at</b>  ...",

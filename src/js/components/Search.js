@@ -1,6 +1,7 @@
 import React from "react";
 
 import Input from "./Input";
+import Results from "./Results";
 
 var $ = require('jquery');
 
@@ -32,7 +33,7 @@ export default class Search extends React.Component {
       $.support.cors = true;
       $.ajax({
 		    type : "GET",
-		    url : "http://localhost:8080/test/testautocomplete.json",//"http://localhost:5555/autocomplete/uniqaat?term=" + keywords,
+		    url : this.props.autocompleteUrl,//+ keywords,
 		    dataType : 'json',
 		    contentType : "application/json; charset=utf-8",
 		    headers : {
@@ -78,7 +79,7 @@ export default class Search extends React.Component {
       $.support.cors = true;
       $.ajax({
 		    type : "GET",
-		    url : "http://localhost:8080/test/testSearch.json",//"http://localhost:5555/autocomplete/uniqaat?term=" + keywords,
+		    url : this.props.searchUrl,//+ keywords,
 		    dataType : 'json',
 		    contentType : "application/json; charset=utf-8",
 		    headers : {
@@ -122,6 +123,10 @@ export default class Search extends React.Component {
         <Input
           getSuggestions={this.getSuggestions.bind(this)}
           suggestions={this.state.suggestions}
+          getSearchResults={this.getSearchResults.bind(this)}
+        />
+        <Results
+          searchResults={this.state.searchResults}
         />
       </div>
     );
