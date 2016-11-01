@@ -1,7 +1,6 @@
 import React from "react";
 
 import SearchResult from "./SearchResult";
-var $ = require('jquery');
 
 /**
  * Panel with autocomplete suggestions that should appear right under
@@ -27,7 +26,7 @@ export default class Results extends React.Component {
     }
     return (
       resultsDivs.length > 0 ?
-          <div className={"search-results"} id="results">
+          <section className={"search-results"} id="results">
               {
                 resultsDivs.map(
                   function(result){
@@ -35,7 +34,7 @@ export default class Results extends React.Component {
                   }
                 )
               }
-          </div> : null
+          </section> : null
     );
   }
 }
