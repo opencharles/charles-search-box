@@ -1,6 +1,6 @@
 <img alt="logo" src="http://www.amihaiemil.com/images/logo_mic_js.PNG" width="60" height="60"/>
 # charles-search-box
-[![Build Status](https://travis-ci.org/amihaiemil/charles-search-box.svg?branch=master)](https://travis-ci.org/amihaiemil/charles-search-box)
+[![Build Status](https://travis-ci.org/opencharles/charles-search-box.svg?branch=master)](https://travis-ci.org/opencharles/charles-search-box)
 
 ReactJS search box component
 
