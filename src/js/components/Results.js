@@ -9,7 +9,7 @@ import SearchResult from "./SearchResult";
 export default class Results extends React.Component {
 
   render() {
-    var resArray = this.props.searchResults.res;
+    var resArray = this.props.searchResults;
     var resultsDivs = [];
     if(resArray) {
       for (var i = 0; i < resArray.length; i++) {

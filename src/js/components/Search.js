@@ -2,6 +2,7 @@ import React from "react";
 
 import Input from "./Input";
 import Results from "./Results";
+import PageNumbers from "./PageNumbers";
 
 var $ = require('jquery');
 
@@ -74,12 +75,12 @@ export default class Search extends React.Component {
   /**
    * Make an ajax call to get the search results json object from the backend.
    */
-  getSearchResults(keywords) {
-    if(keywords.length > 0) {
+  getSearchResults(url) {
+    if(url.length > 0) {
       $.support.cors = true;
       $.ajax({
 		    type : "GET",
-		    url : this.props.searchUrl,//+ keywords,
+		    url : url,//this.props.searchUrl,//+ keywords,
 		    dataType : 'json',
 		    contentType : "application/json; charset=utf-8",
 		    headers : {
@@ -123,10 +124,15 @@ export default class Search extends React.Component {
         <Input
           getSuggestions={this.getSuggestions.bind(this)}
           suggestions={this.state.suggestions}
+          searchUrl={this.props.searchUrl}
           getSearchResults={this.getSearchResults.bind(this)}
         />
         <Results
-          searchResults={this.state.searchResults}
+          searchResults={this.state.searchResults.res}
+        />
+        <PageNumbers
+          getSearchResults={this.getSearchResults.bind(this)}
+          pages={this.state.searchResults.pages} id="paginator" key="paginator"
         />
       </div>
     );
