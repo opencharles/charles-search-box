@@ -1,10 +1,10 @@
 {
-	"pageNumber": 1,
+	"pageNumber": 3,
 	"elementsFound": 30,
-	"nextPage": "http://localhost:8080/test/testsearch2.json",
-	"previousPage": " - ",
+	"nextPage": "-",
+	"previousPage": "http://localhost:8080/test/testsearch2.json",
 	"res": [{
-		"title": "RESULT PAGE 1",
+		"title": "RESULT PAGE 3",
 		"link": "/versicherung/cms/geschaeftskunden/gesundheit/Spezialisten_Krankenversicherung.de.html",
 		"text": " ...alexander.dawid@<b>uniqa.at</b> Landesdirektion Niederösterreich: Gerhard Mach Tel: 02742/894-403 E-Mail: gerhard.mach@<b>uniqa.at</b> Landesdirektion Oberösterreich: Dr. Ewald Kirchmayr Tel: 0732/6905-400 E-Mail: ewald.kirchmayr@<b>uniqa.at</b>  ...",
 		"category": "Geschäftskunden"
@@ -49,7 +49,7 @@
 		"text": " ...Impressum Medieninhaber und Herausgeber <b>UNIQA</b> Österreich Versicherungen AG A-1029 Wien ...E-Mail: info@<b>uniqa.at</b> Web: http://www.uniqa.at http://www.uniqagroup.com Gesellschaftsform: Aktiengesellschaft ...Am Medieninhaber als Aktionä ...",
 		"category": ""
 	}, {
-		"title": "RESULT PAGE 1 LAST",
+		"title": "RESULT PAGE 3 LAST THREE",
 		"link": "/versicherung/cms/betreuer/Rueckruf_anfordern.de.html",
 		"text": " ...E-Mail-Adresse und Telefonnummer) von <b>UNIQA</b> Österreich Versicherungen AG (<b>UNIQA</b> ...(z.B. Veranstaltungen) und Produkten sowie auch neuen Dienstleistungen durch <b>UNIQA</b> kontaktiert ...50677-670) oder per E-Mail (info@<b>uniqa.at ...",
 		"category": ""

@@ -26,6 +26,7 @@ export default class PageNumbers extends React.Component {
         selectedPage: number
       }
     );
+    this.props.getSearchResults(this.props.pages[number]);
   }
 
 

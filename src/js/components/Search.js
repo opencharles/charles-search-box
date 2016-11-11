@@ -130,7 +130,10 @@ export default class Search extends React.Component {
         <Results
           searchResults={this.state.searchResults.res}
         />
-        <PageNumbers pages={this.state.searchResults.pages} id="paginator" key="paginator"/>
+        <PageNumbers
+          getSearchResults={this.getSearchResults.bind(this)}
+          pages={this.state.searchResults.pages} id="paginator" key="paginator"
+        />
       </div>
     );
   }
