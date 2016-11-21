@@ -26,7 +26,7 @@ export default class Results extends React.Component {
     }
     return (
       resultsDivs.length > 0 ?
-          <section className={"search-results"} id="results">
+          <div className={"search-results"}>
               {
                 resultsDivs.map(
                   function(result){
@@ -34,7 +34,7 @@ export default class Results extends React.Component {
                   }
                 )
               }
-          </section> : null
+          </div> : null
     );
   }
 }

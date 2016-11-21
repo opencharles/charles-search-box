@@ -8,9 +8,10 @@ export default class Results extends React.Component {
   render() {
     return (
       <div className={"search-result"} id={this.props.id} key={this.props.key}>
-        <b>-----------------------------------------------------------</b><br/>
-        <a target="_blank"  href={this.props.link}>{this.props.title}</a>
-        <p>{this.props.text}</p>
+        <a target="_blank"  href={this.props.link}>
+            <h3>{this.props.title}</h3>
+        </a>
+        <div dangerouslySetInnerHTML={{ __html: this.props.text }}></div>
       </div>
     );
   }
