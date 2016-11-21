@@ -8,18 +8,18 @@ export default class PageNumber extends React.Component {
    * Handle the event when the user clicks on a page number.
    */
   handleClick(e) {
-    this.props.selectPage(e.target.innerHTML - 1);
+    this.props.selectPage(this.props.value);
   }
 
   render() {
     return (
         this.props.selected ?
         <li onClick={this.handleClick.bind(this)} className={"search-page selected"} id={this.props.id} key={this.props.key}>
-          {this.props.number}
+          {this.props.label}
         </li>
         :
         <li onClick={this.handleClick.bind(this)} className={"search-page"} id={this.props.id} key={this.props.key}>
-          {this.props.number}
+          {this.props.label}
         </li>
     );
   }

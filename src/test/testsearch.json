@@ -2,7 +2,7 @@
 	"pageNumber": 1,
 	"elementsFound": 30,
 	"nextPage": "http://localhost:8080/test/testsearch2.json",
-	"previousPage": " - ",
+	"previousPage": "-",
 	"res": [{
 		"title": "RESULT PAGE 1",
 		"link": "/versicherung/cms/geschaeftskunden/gesundheit/Spezialisten_Krankenversicherung.de.html",
