@@ -132,7 +132,7 @@ export default class Search extends React.Component {
         />
         <PageNumbers
           getSearchResults={this.getSearchResults.bind(this)}
-          pages={this.state.searchResults.pages} id="paginator" key="paginator"
+          results={this.state.searchResults} id="paginator" key="paginator"
         />
       </div>
     );

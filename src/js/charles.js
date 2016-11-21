@@ -23,6 +23,15 @@ function getQueryStringParams(url) {
     return result;
 };
 
+/**
+ * When the first search is performed, empty the body element, leaving just the search
+ * component with the results.
+ */
+function showFirstSearch() {
+  var searchHtml = '<div id="charles-search">' + document.getElementById('charles-search').innerHTML + '</div>'
+  document.body.innerHTML = searchHtml;
+}
+
 var autocomplete = '';
 var search = '';
 var scripts = document.getElementsByTagName('script');
