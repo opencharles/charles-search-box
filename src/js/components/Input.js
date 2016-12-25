@@ -1,6 +1,4 @@
 import React from "react";
-
-import Suggestions from "./Suggestions";
 var FaSearch = require('react-icons/lib/fa/search');
 var $ = require('jquery');
 

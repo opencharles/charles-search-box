@@ -1,6 +1,8 @@
 import React from "react";
 
 import SearchResult from "./SearchResult";
+import PageNumbers from "./PageNumbers";
+
 var $ = require('jquery');
 
 /**
@@ -16,10 +18,10 @@ export default class Results extends React.Component {
       panelPos = {
         top: inputPos.top + $("#charles-search-field").outerHeight() + "px",
         left: inputPos.left  + "px",
-        width: $("#charles-search-field").outerWidth() + "px"
+        width: ($("#charles-search-field").outerWidth() + 70) + "px"
       };
     }
-    var resArray = this.props.searchResults;
+    var resArray = this.props.searchResults.res;
     var resultsDivs = [];
     if(resArray) {
       for (var i = 0; i < resArray.length; i++) {
@@ -36,7 +38,8 @@ export default class Results extends React.Component {
     }
     return (
       resultsDivs.length > 0 ?
-          <div style={panelPos} className={"suggestionGroupClass"} id="suggestions">
+        <div style={panelPos} id="resultsPanel" className="resultsPanel">
+          <div className="suggestionGroupClass" id="suggestions">
               {
                 resultsDivs.map(
                   function(result){
@@ -44,7 +47,13 @@ export default class Results extends React.Component {
                   }
                 )
               }
-          </div> : null
+          </div>
+          <PageNumbers
+            getSearchResults={this.props.getSearchResults}
+            results={this.props.searchResults} id="paginator" key="paginator"
+          />
+        </div>
+          : null
     );
   }
 }

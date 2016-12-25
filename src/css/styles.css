@@ -14,7 +14,7 @@
     -moz-box-shadow: inset 1px 2px 6px -1px #CCC;
     box-shadow: inset 1px 2px 6px -1px #CCC;
 }
-.suggestionGroupClass {
+.resultsPanel {
 	position: absolute;
 	z-index: 9999;
 	overflow: hidden;
