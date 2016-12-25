@@ -23,25 +23,16 @@ function getQueryStringParams(url) {
     return result;
 };
 
-/**
- * When the first search is performed, empty the body element, leaving just the search
- * component with the results.
- */
-function showFirstSearch() {
-  var searchHtml = '<div id="charles-search">' + document.getElementById('charles-search').innerHTML + '</div>'
-  document.body.innerHTML = searchHtml;
-}
-
-var autocomplete = '';
+//var autocomplete = '';
 var search = '';
 var scripts = document.getElementsByTagName('script');
 var paramsFound=false;
 for(var i=0;i<scripts.length;i++) {
   if(scripts[i].src.indexOf("/charles.min.js") != -1) {
     var params = getQueryStringParams(scripts[i].src);
-    autocomplete = params['autocomplete'];
+    //autocomplete = params['autocomplete'];
     search = params['search'];
-    if(autocomplete && search) {
+    if(search /* && autocomplete*/) {
       paramsFound=true;
       break;
     }
@@ -50,7 +41,7 @@ for(var i=0;i<scripts.length;i++) {
 if(paramsFound) {
   ReactDOM.render(
     <Search
-      autocompleteUrl={autocomplete}
+      //autocompleteUrl={autocomplete}
       searchUrl={search}
     />,
     searchDiv
