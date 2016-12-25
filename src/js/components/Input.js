@@ -25,7 +25,7 @@ export default class Input extends React.Component {
           }
         );
         this.props.getSuggestions('');
-        this.props.getSearchResults(this.props.searchUrl/*this.state.keywords*/);
+        this.props.getSearchResults(this.props.searchUrl/*this.state.keywords*/, true);
       }
     }
 
@@ -37,8 +37,8 @@ export default class Input extends React.Component {
         e.keyCode != 13 && e.keyCode != 40 && e.keyCode != 38 &&
         e.keyCode != 37 && e.keyCode != 39
       ) {
-        const input = e.target.value;
-        this.props.getSearchResults(this.props.searchUrl/*+query*/);
+        var input = e.target.value;
+        this.props.getSearchResults(input, true);
       } else {
         if(e.keyCode != 13)  {
           var suggestionsContainer = $(".suggestionGroupClass");
@@ -104,7 +104,7 @@ export default class Input extends React.Component {
           }
         }
         if(query.length > 0) {
-          this.props.getSearchResults(this.props.searchUrl/*query*/);
+          this.props.getSearchResults(query);
         }
     }
 

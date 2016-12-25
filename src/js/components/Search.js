@@ -24,13 +24,15 @@ export default class Search extends React.Component {
 
   /**
    * Make an ajax call to get the search results json object from the backend.
+   * @param query - String; Search query.
+   * @param prependUrl - Boolean; Should the searchUrl be prepended or not?
    */
-  getSearchResults(url) {
-    if(url.length >= 3) {
+  getSearchResults(query, prependUrl) {
+    if(query.length >= 3) {
       $.support.cors = true;
       $.ajax({
 		    type : "GET",
-		    url : url,//this.props.searchUrl,//+ keywords,
+		    url : prependUrl ? this.props.searchUrl/*+ query*/ : query,
 		    dataType : 'json',
 		    contentType : "application/json; charset=utf-8",
 		    headers : {
