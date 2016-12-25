@@ -1,14 +1,24 @@
 import React from "react";
 
 import SearchResult from "./SearchResult";
+var $ = require('jquery');
 
 /**
- * Panel with autocomplete suggestions that should appear right under
+ * Panel with results that should appear right under
  * the input field as soon as the user types in a few letters.
  */
 export default class Results extends React.Component {
 
   render() {
+    var inputPos = $("#charles-search-field").offset();
+    var panelPos;
+    if(inputPos) {//at first render, this will be undefined
+      panelPos = {
+        top: inputPos.top + $("#charles-search-field").outerHeight() + "px",
+        left: inputPos.left  + "px",
+        width: $("#charles-search-field").outerWidth() + "px"
+      };
+    }
     var resArray = this.props.searchResults;
     var resultsDivs = [];
     if(resArray) {
@@ -26,7 +36,7 @@ export default class Results extends React.Component {
     }
     return (
       resultsDivs.length > 0 ?
-          <div className={"search-results"}>
+          <div style={panelPos} className={"suggestionGroupClass"} id="suggestions">
               {
                 resultsDivs.map(
                   function(result){

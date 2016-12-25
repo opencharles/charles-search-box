@@ -40,7 +40,7 @@ export default class Input extends React.Component {
         e.keyCode != 37 && e.keyCode != 39
       ) {
         const input = e.target.value;
-        this.props.getSuggestions(input);
+        this.props.getSearchResults(this.props.searchUrl/*+query*/);
       } else {
         if(e.keyCode != 13)  {
           var suggestionsContainer = $(".suggestionGroupClass");
@@ -138,10 +138,6 @@ export default class Input extends React.Component {
                 autoComplete="off"
               />
           }
-          <Suggestions
-            selectSuggestion={this.selectSuggestion.bind(this)}
-            list={this.props.suggestions}
-          />
         </div>
        );
     }

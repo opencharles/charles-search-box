@@ -76,7 +76,7 @@ export default class Search extends React.Component {
    * Make an ajax call to get the search results json object from the backend.
    */
   getSearchResults(url) {
-    if(url.length > 0) {
+    if(url.length >= 3) {
       $.support.cors = true;
       $.ajax({
 		    type : "GET",
