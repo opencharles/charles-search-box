@@ -15,7 +15,7 @@ After you take down the project, simply go in its root folder and run:
 
 ```
 npm install
-npm run rev
+npm run dev
 ```
 
 A webpack development server will start. Go at ``localhost:8080`` in your browser. There is currently some test data in some files so you can see how the widget works.
