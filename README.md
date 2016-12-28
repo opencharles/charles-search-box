@@ -11,11 +11,11 @@ To use this you simply have to add a script on the page where you want the searc
 
 ## Build
 
-After you take down the project, simply go in its root folder and run:
+After you take down the project, simply go in its root folder and run the following commands
 
 ```
-npm install
-npm run dev
+$ npm install
+$ npm run dev
 ```
 
 A webpack development server will start. Go at ``localhost:8080`` in your browser. There is currently some test data in some files so you can see how the widget works.
