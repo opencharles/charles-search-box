@@ -19,3 +19,13 @@ $ npm run dev
 ```
 
 A webpack development server will start. Go at ``localhost:8080`` in your browser. There is currently some test data in some files so you can see how the widget works.
+
+
+## Contribute
+
+Contributors are [welcomed](http://www.amihaiemil.com/2016/12/30/becoming-a-contributor.html)
+
+1. Open an issue regarding an improvement you thought of, or a bug you noticed, or asked to be assigned to an existing one.
+2. If the issue is confirmed, fork the repository, do the changes on a separate branch and make a Pull Request.
+3. After review and acceptance, the PR is merged and closed.
+4. You are automatically listed as a contributor on the repo and the project's site (to follow)
