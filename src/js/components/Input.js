@@ -122,7 +122,7 @@ export default class Input extends React.Component {
     render() {
       return (
         <div id="charles-search-wrapper">
-          <span id="charles-search-input-wrapper">
+          <div id="charles-search-input-wrapper">
           {
             this.state.keywords.length == 0 ?
               <input
@@ -136,7 +136,7 @@ export default class Input extends React.Component {
                 autoComplete="off"
               />
           }
-          </span>
+          </div>
         </div>
        );
     }
