@@ -38,7 +38,7 @@ export default class Results extends React.Component {
     }
     return (
       resultsDivs.length > 0 ?
-        <div style={panelPos} id="resultsPanel" className="resultsPanel">
+        <div id="resultsPanel" className="resultsPanel">
           <div className="suggestionGroupClass" id="suggestions">
               {
                 resultsDivs.map(
