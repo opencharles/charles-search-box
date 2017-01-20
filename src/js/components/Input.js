@@ -46,30 +46,30 @@ export default class Input extends React.Component {
             //console.log(e.keyCode);
             switch (e.keyCode) {
               case 38://up arrow pressed
-                var activeItem = suggestionsContainer.find('.active-suggestion-item');
+                var activeItem = suggestionsContainer.find('.active-result');
                 if (activeItem.length == 0) {
-                  suggestionsContainer.children().last().addClass("active-suggestion-item");
+                  suggestionsContainer.children().last().addClass("active-result");
                 } else {
                   var prevItem = activeItem.prev();
-                  activeItem.removeClass("active-suggestion-item");
+                  activeItem.removeClass("active-result");
                   if (prevItem.length == 0) {
-                    suggestionsContainer.children().last().addClass("active-suggestion-item");
+                    suggestionsContainer.children().last().addClass("active-result");
                   } else {
-                    prevItem.addClass("active-suggestion-item");
+                    prevItem.addClass("active-result");
                   }
                 }
                 break;
               case 40://down arrow pressed
-                var activeItem = suggestionsContainer.find('.active-suggestion-item');
+                var activeItem = suggestionsContainer.find('.active-result');
                 if (activeItem.length == 0) {
-                  suggestionsContainer.children().first().addClass("active-suggestion-item");
+                  suggestionsContainer.children().first().addClass("active-result");
                 } else {
                   var nextItem = activeItem.next();
-                  activeItem.removeClass("active-suggestion-item");
+                  activeItem.removeClass("active-result");
                   if (nextItem.length == 0) {
-                    suggestionsContainer.children().first().addClass("active-suggestion-item");
+                    suggestionsContainer.children().first().addClass("active-result");
                   } else {
-                    nextItem.addClass("active-suggestion-item");
+                    nextItem.addClass("active-result");
                   }
                 }
                 break;
@@ -86,7 +86,7 @@ export default class Input extends React.Component {
      */
     enterPressed(e) {
         var query = '';
-        var activeSuggestion = $(".active-suggestion-item").text();
+        var activeSuggestion = $(".active-result").text();
         if(activeSuggestion != '') {
           query = activeSuggestion;
           this.setState (
