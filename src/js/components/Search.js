@@ -32,9 +32,9 @@ export default class Search extends React.Component {
       $.support.cors = true;
       $.ajax({
 		    type : "GET",
-		    url : prependUrl ? this.props.searchUrl/*+ query*/ : query,
-		    dataType : 'json',
-		    contentType : "application/json; charset=utf-8",
+		    url : prependUrl ? this.props.searchUrl + query : query,
+		    //dataType : 'json',
+		    //contentType : "application/json; charset=utf-8",
 		    headers : {
 		  	  Accept : "application/json; charset=utf-8"
 		    },

@@ -11,7 +11,11 @@ export default class Results extends React.Component {
         <a target="_blank"  href={this.props.link}>
             <h3>{this.props.title}</h3>
         </a>
-        <div className="search-result-text" dangerouslySetInnerHTML={{ __html: this.props.text }}></div>
+        <div
+          className="search-result-text"
+          dangerouslySetInnerHTML={
+            { __html: " ... " + this.props.text + " ..."}
+          }></div>
       </div>
     );
   }

@@ -21,7 +21,7 @@ export default class Results extends React.Component {
         width: ($("#charles-search-field").outerWidth() + 70) + "px"
       };
     }
-    var resArray = this.props.searchResults.res;
+    var resArray = this.props.searchResults.results;
     var resultsDivs = [];
     if(resArray) {
       for (var i = 0; i < resArray.length; i++) {
@@ -31,7 +31,7 @@ export default class Results extends React.Component {
             key={"search-result-" + i}
             link={resArray[i].link}
             title={resArray[i].title}
-            text={resArray[i].text}
+            text={resArray[i].highlight}
           />
         );
       }

@@ -24,15 +24,16 @@ function getQueryStringParams(url) {
 };
 
 //var autocomplete = '';
-var search = '';
+var search = 'http://ec2-54-68-83-8.us-west-2.compute.amazonaws.com:8080/charles-rest/api/s/';
+var repo = '';
 var scripts = document.getElementsByTagName('script');
 var paramsFound=false;
 for(var i=0;i<scripts.length;i++) {
   if(scripts[i].src.indexOf("/charles.min.js") != -1) {
     var params = getQueryStringParams(scripts[i].src);
     //autocomplete = params['autocomplete'];
-    search = params['search'];
-    if(search /* && autocomplete*/) {
+    repo = params['repo'];
+    if(repo /* && autocomplete*/) {
       paramsFound=true;
       break;
     }
@@ -42,10 +43,10 @@ if(paramsFound) {
   ReactDOM.render(
     <Search
       //autocompleteUrl={autocomplete}
-      searchUrl={search}
+      searchUrl={search + repo + "?index=0&size=5&kw="}
     />,
     searchDiv
   );
 } else {
-  console.error("charles.min.js: Please specify urls for both autocomplete and search!");
+  console.error("charles.min.js: Please specify the Github repo full name!");
 }
