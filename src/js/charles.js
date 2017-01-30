@@ -2,6 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom";
 
 import Search from "./components/Search";
+var $ = require('jquery');
 
 var searchDiv = document.getElementById("charles-search");
 if(searchDiv == null) {
@@ -10,41 +11,14 @@ if(searchDiv == null) {
     document.body.appendChild(searchDiv);
 }
 
-/**
- * Get the query params from the src url.
- */
-function getQueryStringParams(url) {
-    var queryStringParams = url.substring(url.indexOf("?") + 1, url.length).split('&');
-    var result = {}, s2, i;
-    for (i = 0; i < queryStringParams.length; i += 1) {
-        s2 = queryStringParams[i].split('=');
-        result[decodeURIComponent(s2[0]).toLowerCase()] = decodeURIComponent(s2[1]);
-    }
-    return result;
-};
-
-//var autocomplete = '';
 var search = 'http://ec2-54-68-83-8.us-west-2.compute.amazonaws.com:8080/charles-rest/api/s/';
-var repo = '';
-var scripts = document.getElementsByTagName('script');
-var paramsFound=false;
-for(var i=0;i<scripts.length;i++) {
-  if(scripts[i].src.indexOf("/charles.min.js") != -1) {
-    var params = getQueryStringParams(scripts[i].src);
-    //autocomplete = params['autocomplete'];
-    repo = params['repo'];
-    if(repo /* && autocomplete*/) {
-      paramsFound=true;
-      break;
-    }
-  }
-}
-if(paramsFound) {
+var repo = $('script[id=charlesscript]').attr('repo');
+if(repo.length > 0) {
+  $('head').append(
+    '<link href="http://amihaiemil.github.io/css/charles_light.css" type="text/css" rel="stylesheet"/>'
+  )
   ReactDOM.render(
-    <Search
-      //autocompleteUrl={autocomplete}
-      searchUrl={search + repo + "?index=0&size=5&kw="}
-    />,
+    <Search searchUrl={search + repo + "?index=0&size=5&kw="}/>,
     searchDiv
   );
 } else {
