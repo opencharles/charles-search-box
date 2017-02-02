@@ -14,7 +14,7 @@ Make sure you instruct [@charlesmike](https://www.github.com/charlesmike) to ind
    type="text/javascript"
    id="charlesscript"
    repo="your/github-repo"
-   src="http://www.amihaiemil.com/js/charles.min.js">
+   src="http://www.amihaiemil.com/js/charles/charles.min.js">
 </script>
 ```
 
@@ -23,9 +23,9 @@ div is not present on the page, it will create and place it right at the beginni
 the ``<body>`` - you will probably have to write a little CSS to position the widget on
   the page.
 
-## Customization 
+## Customization
 
-TBD ... choosing the design theme, number of results per page etc 
+TBD ... choosing the design theme, number of results per page etc
 
 ## Build
 
