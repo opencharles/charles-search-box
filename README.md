@@ -4,9 +4,7 @@
 
 ## ReactJS search box component
 
-Component for search designed to call a REST endpoint for search.
-Shows paginated results in widget-like manner.
-
+Front-end search widget of [charles-rest](https://www.github.com/opencharles/charles-rest).
 To use this, add the following script to your page, **right before closing the body tag**.
 
 Make sure you instruct [@charlesmike](https://www.github.com/charlesmike) to index your github site first.
