@@ -5,9 +5,23 @@
 ## ReactJS search box component
 
 Component for search designed to call a REST endpoint for search.
-Shows paginated results in widget-like manner. Layout of the JSON response to follow.
+Shows paginated results in widget-like manner.
 
-To use this you simply have to add a script on the page where you want the search box to show. You have to specify the two endpoints to call.
+To use this, add the following script to your page,
+
+```
+<script
+   type="text/javascript"
+   id = "charlesscript"
+   repo="your/github-repo"
+   src="http://www.amihaiemil.com/js/charles.min.js">
+</script>
+```
+
+The script will render the whole widget in a div with id ``charles-search``. If the
+div is not present on the page, it will create and place it right at the beginning of
+the ``<body>`` - you will probably have to write a little CSS to position the widget on
+  the page. 
 
 ## Build
 
