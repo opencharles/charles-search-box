@@ -126,7 +126,7 @@ export default class Input extends React.Component {
           {
             this.state.keywords.length == 0 ?
               <input
-                id="charles-search-field" placeholder="Search..."
+                id="charles-search-field" placeholder="Search as you type..."
                 onKeyUp={this.handleKeyUp.bind(this)} onChange={this.handleChange.bind(this)}
                 autoComplete="off"
               />
