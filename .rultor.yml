@@ -5,10 +5,11 @@ docker:
 install: |-
   curl -sL https://deb.nodesource.com/setup_7.x | sudo -E bash -
   sudo apt-get install -y nodejs
-  npm install webpack -g
+  npm install
+  webpack --version
 merge:
   script: |-
-    npm install
+    #npm install
     NODE_ENV=production webpack
 deploy:
   script: |-
