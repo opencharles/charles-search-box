@@ -15,10 +15,13 @@ merge:
     NODE_ENV=production ./node_modules/.bin/webpack
 deploy:
   script: |-
+    NODE_ENV=production ./node_modules/.bin/webpack
     pwd
     ls
     cd ..
-    git clone git@github.com:amihaiemil/amihaiemil.github.io.git
+    git clone git@github.com:amihaiemil/amihaiemil.github.io.git > /dev/null << EOF
+    yes
+    EOF
 release:
   script:
   - echo "Any release script here..."
