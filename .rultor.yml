@@ -1,0 +1,21 @@
+architect:
+  - amihaiemil
+docker:
+  as_root: true
+install: |-
+  curl -sL https://deb.nodesource.com/setup_7.x | sudo -E bash -
+  sudo apt-get install -y nodejs
+  npm install webpack -g
+merge:
+  script: |-
+    npm install
+    NODE_ENV=production webpack
+deploy:
+  script: |-
+    pwd
+    ls
+    cd ..
+    git clone git@github.com:amihaiemil/amihaiemil.github.io.git
+release:
+  script:
+  - echo "Any release script here..."
