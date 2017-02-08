@@ -8,6 +8,8 @@ install: |-
   sudo apt-get install npm
   sudo npm install
   ./node_modules/.bin/webpack --version
+decrypt:
+  deployment.txt: "repo/dcfg/deployment.txt.asc"
 merge:
   script: |-
     NODE_ENV=production ./node_modules/.bin/webpack
