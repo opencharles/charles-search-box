@@ -17,8 +17,8 @@ merge:
 deploy:
   script: |-
     NODE_ENV=production ./node_modules/.bin/webpack
-    chmod +x ./rrv.sh
-    ./rrv.sh
+    chmod +x ./deployment.sh
+    ./deployment.sh
 release:
   script:
   - echo "Any release script here..."
