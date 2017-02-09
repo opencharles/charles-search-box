@@ -9,6 +9,15 @@
 # repos (we need to use SSH and the server doesn't trust the host, or HTTPS, where we
 # are prompted for user and password.)
 
+TOKEN=$(cat deployment.txt)
+# deploy the build charles.min.js
+#SHA_BUILD=$(curl 'https://api.github.com/repos/amihaiemil/amihaiemil.github.io/contents/js/charles/charles.min.js' | jq '.sha')
+#NEW_BUILD=base64encodednewcss
 
-# script here...
+#curl -H "Authorization: token ${TOKEN}" -X PUT -d '{"message": "deploy new build", "sha": ${SHA_BUILD}, "content": "${NEW_BUILD}"}' https:// #api.github.com/repos/amihaiemil/amihaiemil.github.io/contents/js/charles/charles.min.js
+
+# deploy the css file charles_light.css
+SHA_CSS_LIGHT=$(curl 'https://api.github.com/repos/amihaiemil/amihaiemil.github.io/contents/css/charles/charles_light.css' | jq '.sha')
+NEW_CSS=$(openssl enc -base64 <<< $(cat src/css/charles_light.css))
+curl -H "Authorization: token ${TOKEN}" -X PUT -d '{"message": "deploy css light", "sha": ${SHA_CSS_LIGHT}, "content": "${NEW_CSS}"}' https://api.github.com/repos/amihaiemil/amihaiemil.github.io/contents/css/charles/charles_light.css
 
