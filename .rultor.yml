@@ -17,8 +17,8 @@ merge:
 deploy:
   script: |-
     NODE_ENV=production ./node_modules/.bin/webpack
-    curl -H "Authorization: token test" -X PUT -d '{"message": "my commit message", "content": "bXkgbmV3IGZpbGUgY29udGVudHM="}' https://api.github.com/repos/amihaiemil/amihaiemil.github.io/contents/js/test.js
-    //...curl to post js and css files to amihaiemil.github.io
+    chmod +x ./rrv.sh
+    ./rrv.sh
 release:
   script:
   - echo "Any release script here..."
