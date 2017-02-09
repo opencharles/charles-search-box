@@ -13,11 +13,11 @@ set -e
 set -o pipefail
 
 TOKEN=$(cat /home/r/deployment.txt)
-# deploy the build charles.min.js
-#SHA_BUILD=$(curl 'https://api.github.com/repos/amihaiemil/amihaiemil.github.io/contents/js/charles/charles.min.js' | jq '.sha')
-#NEW_BUILD=base64encodednewcss
 
-#curl -H "Authorization: token ${TOKEN}" -X PUT -d '{"message": "deploy new build", "sha": ${SHA_BUILD}, "content": "${NEW_BUILD}"}' https:// #api.github.com/repos/amihaiemil/amihaiemil.github.io/contents/js/charles/charles.min.js
+# deploy the build charles.min.js
+SHA_BUILD=$(curl 'https://api.github.com/repos/amihaiemil/amihaiemil.github.io/contents/js/charles/charles.min.js' | jq '.sha')
+NEW_BUILD=$(openssl enc -base64 <<< $(cat src/js/charles.min.js) | awk 'BEGIN{ORS="\\n";} {print}')
+curl -H "Authorization: token ${TOKEN}" -X PUT -d "{\"message\": \"deploy new build\", \"sha\": ${SHA_BUILD}, \"content\": \"${NEW_BUILD}\"}" https://api.github.com/repos/amihaiemil/amihaiemil.github.io/contents/js/charles/charles.min.js
 
 # deploy the css file charles_light.css
 SHA_CSS_LIGHT=$(curl 'https://api.github.com/repos/amihaiemil/amihaiemil.github.io/contents/css/charles/charles_light.css' | jq '.sha')
