@@ -9,7 +9,7 @@
 # repos (we need to use SSH and the server doesn't trust the host, or HTTPS, where we
 # are prompted for user and password.)
 
-TOKEN=$(cat deployment.txt)
+TOKEN=$(cat /home/r/deployment.txt)
 # deploy the build charles.min.js
 #SHA_BUILD=$(curl 'https://api.github.com/repos/amihaiemil/amihaiemil.github.io/contents/js/charles/charles.min.js' | jq '.sha')
 #NEW_BUILD=base64encodednewcss
