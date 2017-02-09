@@ -18,6 +18,6 @@ TOKEN=$(cat /home/r/deployment.txt)
 
 # deploy the css file charles_light.css
 SHA_CSS_LIGHT=$(curl 'https://api.github.com/repos/amihaiemil/amihaiemil.github.io/contents/css/charles/charles_light.css' | jq '.sha')
-NEW_CSS=$(openssl enc -base64 <<< $(cat src/css/charles_light.css))
-curl -H "Authorization: token ${TOKEN}" -X PUT -d '{"message": "deploy css light", "sha": ${SHA_CSS_LIGHT}, "content": "${NEW_CSS}"}' https://api.github.com/repos/amihaiemil/amihaiemil.github.io/contents/css/charles/charles_light.css
+NEW_LIGHT_CSS=$(openssl enc -base64 <<< $(cat src/css/charles_light.css))
+curl -H "Authorization: token ${TOKEN}" -X PUT -d "{\"message\": \"deploy css light\", \"sha\": ${SHA_CSS_LIGHT}, \"content\": \"${NEW_LIGHT_CSS}\"}" https://api.github.com/repos/amihaiemil/amihaiemil.github.io/contents/css/charles/charles_light.css
 
