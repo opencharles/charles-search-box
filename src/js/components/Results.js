@@ -12,15 +12,6 @@ var $ = require('jquery');
 export default class Results extends React.Component {
 
   render() {
-    var inputPos = $("#charles-search-field").offset();
-    var panelPos;
-    if(inputPos) {//at first render, this will be undefined
-      panelPos = {
-        top: inputPos.top + $("#charles-search-field").outerHeight() + "px",
-        left: inputPos.left  + "px",
-        width: ($("#charles-search-field").outerWidth() + 70) + "px"
-      };
-    }
     var resArray = this.props.searchResults.results;
     var resultsDivs = [];
     if(resArray) {

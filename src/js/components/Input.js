@@ -15,21 +15,6 @@ export default class Input extends React.Component {
     }
 
     /**
-     * Set a suggested string as the value of the input field.
-     */
-    selectSuggestion(suggestion) {
-      if(suggestion.length > 0) {
-        this.setState(
-          {
-            keywords: suggestion
-          }
-        );
-        this.props.getSuggestions('');
-        this.props.getSearchResults(this.props.searchUrl/*this.state.keywords*/, true);
-      }
-    }
-
-    /**
      * Handle the event of key up on the input field.
      */
     handleKeyUp(e) {
@@ -85,27 +70,7 @@ export default class Input extends React.Component {
      * Handles the event where 'enter' key was pressed on this input field.
      */
     enterPressed(e) {
-        var query = '';
-        var activeSuggestion = $(".active-result").text();
-        if(activeSuggestion != '') {
-          query = activeSuggestion;
-          this.setState (
-            {
-              keywords: query
-            }
-          );
-          this.props.getSuggestions('');
-        } else {
-          if($(".suggestionGroupClass")) {
-            this.props.getSuggestions('');
-          }
-          if(this.state.keywords != '') {
-            query = this.state.keywords;
-          }
-        }
-        if(query.length > 0) {
-          this.props.getSearchResults(query);
-        }
+        window.location = $(".active-result a").attr('href');
     }
 
     /**
@@ -119,6 +84,20 @@ export default class Input extends React.Component {
       );
     }
 
+    /**
+     * Bound to the onBlur event (when the use clicks outside of the field)
+     */
+    focusOut() {
+      this.props.getSearchResults('', true);
+    }
+
+    /**
+     * Bound to the onFocus event (when the use clicks in of the field)
+     */
+    onFocus(e) {
+      this.props.getSearchResults(e.target.value, true);
+    }
+
     render() {
       return (
         <div id="charles-search-wrapper">
@@ -127,12 +106,16 @@ export default class Input extends React.Component {
             this.state.keywords.length == 0 ?
               <input
                 id="charles-search-field" placeholder="Search as you type..."
-                onKeyUp={this.handleKeyUp.bind(this)} onChange={this.handleChange.bind(this)}
+                onKeyUp={this.handleKeyUp.bind(this)}
+                onChange={this.handleChange.bind(this)}
                 autoComplete="off"
               />
             :
               <input id="charles-search-field" value={this.state.keywords}
-                onKeyUp={this.handleKeyUp.bind(this)} onChange={this.handleChange.bind(this)}
+                onKeyUp={this.handleKeyUp.bind(this)}
+                onChange={this.handleChange.bind(this)}
+                onBlur={this.focusOut.bind(this)}
+                onFocus={this.onFocus.bind(this)}
                 autoComplete="off"
               />
           }
