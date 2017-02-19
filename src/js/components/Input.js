@@ -114,7 +114,6 @@ export default class Input extends React.Component {
               <input id="charles-search-field" value={this.state.keywords}
                 onKeyUp={this.handleKeyUp.bind(this)}
                 onChange={this.handleChange.bind(this)}
-                onBlur={this.focusOut.bind(this)}
                 onFocus={this.onFocus.bind(this)}
                 autoComplete="off"
               />
