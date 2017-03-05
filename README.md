@@ -5,7 +5,7 @@
 ## ReactJS search box component
 
 Front-end search widget of [charles-rest](https://www.github.com/opencharles/charles-rest).
-To use this, add the following script to your page, **right before closing the body tag**.
+To use this, add the following script to your page, **right after opening the body tag**.
 
 Make sure you instruct [@charlesmike](https://www.github.com/charlesmike) to index your github site first.
 
@@ -18,10 +18,10 @@ Make sure you instruct [@charlesmike](https://www.github.com/charlesmike) to ind
 </script>
 ```
 
+Where ``your/github-repo`` is the fullname of the indexed repository.
+
 The script will render the whole widget in a div with id ``charles-search``. If the
-div is not present on the page, it will create and place it right at the beginning of
-the ``<body>`` - you will probably have to write a little CSS to position the widget on
-  the page.
+div is not present on the page, it will create and place it right after the script tag - **you will probably have to write a little CSS to position the widget (the charles-search div) on the page**.
 
 ## Customization
 
