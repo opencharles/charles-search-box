@@ -10,9 +10,15 @@
 @import url('https://fonts.googleapis.com/css?family=Raleway:400,700');
 
 #charles-search {
-    width: 20%;
+    width: 250px;
     font-family: 'Raleway', sans-serif;
     position: absolute;
+}
+
+@media only screen and (max-width: 400px) {
+  #charles-search {
+      display: none;
+  }
 }
 
 /***********************
