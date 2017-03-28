@@ -2,6 +2,7 @@
 
 ## charles-search-box
 
+[![DevOps By Rultor.com](http://www.rultor.com/b/opencharles/charles-search-box)](http://www.rultor.com/p/opencharles/charles-search-box)
 [![Build Status](https://travis-ci.org/opencharles/charles-search-box.svg?branch=master)](https://travis-ci.org/opencharles/charles-search-box)
 
 ## ReactJS search box component
