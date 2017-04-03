@@ -30,7 +30,7 @@ Here is an example of how the widget works: http://charles.amihaiemil.com (teste
 
 ## Issues
 
-Found any bug/issue or simply thought of an improvement? Please, open a ticker right here, in the repo's issue tracker.
+Found any bug/issue or simply thought of an improvement? Please, open a ticket right here, in the repo's issue tracker.
 
 ## Customization
 
