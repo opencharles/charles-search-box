@@ -26,6 +26,12 @@ Where ``your/github-repo`` is the fullname of the indexed repository.
 The script will render the whole widget in a div with id ``charles-search``. If the
 div is not present on the page, it will create and place it right after the script tag - **you will probably have to write a little CSS to position the widget (the charles-search div) on the page**.
 
+Here is an example of how the widget works: http://charles.amihaiemil.com (tested on Chrome)
+
+## Issues
+
+Found any bug/issue or simply thought of an improvement? Please, open a ticker right here, in the repo's issue tracker.
+
 ## Customization
 
   * **Size** of the page customizable with the "size" parameter -- defaults to 3.
