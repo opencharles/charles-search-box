@@ -4,4 +4,4 @@
 *.txt text=auto eol=lf
 *.css text=auto eol=lf
 *.json text=auto eol=lf
-*.md text=auto eol=lf
+*.md text=auto eol=lffuckin
