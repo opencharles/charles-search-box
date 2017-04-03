@@ -13,12 +13,16 @@ if(searchDiv == null) {
 
 var search = 'http://ec2-54-68-83-8.us-west-2.compute.amazonaws.com:8080/charles-rest/api/s/';
 var repo = $('script[id=charlesscript]').attr('repo');
-if(repo.length > 0) {
+var size = $('script[id=charlesscript]').attr('size');
+if(!size) {
+  size = 3;
+}
+if(repo) {
   $('head').append(
     '<link href="http://www.amihaiemil.com/css/charles/charles_light.css" type="text/css" rel="stylesheet"/>'
   )
   ReactDOM.render(
-    <Search searchUrl={search + repo + "?index=0&size=5&kw="}/>,
+    <Search searchUrl={search + repo + "?index=0&size=" + size + "&kw="}/>,
     searchDiv
   );
 } else {

@@ -28,7 +28,7 @@ div is not present on the page, it will create and place it right after the scri
 
 ## Customization
 
-TBD ... choosing the design theme, number of results per page etc
+  * **Size** of the page customizable with the "size" parameter -- defaults to 3.
 
 ## Build
 
