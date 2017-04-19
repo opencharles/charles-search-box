@@ -70,7 +70,10 @@ export default class Input extends React.Component {
      * Handles the event where 'enter' key was pressed on this input field.
      */
     enterPressed(e) {
-        window.location = $(".active-result a").attr('href');
+        var selected = $(".active-result a");
+        if(selected.attr('href')) {
+          window.location = selected.attr('href');
+        }
     }
 
     /**
