@@ -8,7 +8,7 @@
 ## ReactJS search box component
 
 Front-end search widget of [charles-rest](https://www.github.com/opencharles/charles-rest).
-To use this, add the following script to your page, **right after opening the body tag**.
+To use this, add the following script to your page, **right before closing the body tag**.
 
 Make sure you instruct [@charlesmike](https://www.github.com/charlesmike) to index your github site first.
 
