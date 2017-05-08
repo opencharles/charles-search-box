@@ -10,7 +10,7 @@ install: |-
   sudo node --version
   whereis npm
   pwd
-  sudo npm install charles-search-box
+  sudo npm install https://github.com/amihaiemil/charles-search-box.git
   ./node_modules/.bin/webpack --version
 decrypt:
   deployment.txt: "repo/dcfg/deployment.txt.asc"
