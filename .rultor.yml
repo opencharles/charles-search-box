@@ -11,9 +11,9 @@ install: |-
   whereis npm
   pwd
   ls
-  sudo npm install https://github.com/amihaiemil/charles-search-box.git
+  sudo npm install
   ls
-  ./charles-search-box/node_modules/.bin/webpack --version
+  ./node_modules/.bin/webpack --version
 decrypt:
   deployment.txt: "repo/dcfg/deployment.txt.asc"
 merge:
