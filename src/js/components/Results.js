@@ -2,6 +2,7 @@ import React from "react";
 
 import SearchResult from "./SearchResult";
 import PageNumbers from "./PageNumbers";
+import ReactOutsideEvent from 'react-outside-event';
 
 var $ = require('jquery');
 
@@ -9,7 +10,13 @@ var $ = require('jquery');
  * Panel with results that should appear right under
  * the input field as soon as the user types in a few letters.
  */
-export default class Results extends React.Component {
+class Results extends React.Component {
+
+  onOutsideEvent = (event) => {
+    if(event.target.id != 'charles-search-field') {
+     this.props.getSearchResults("");
+    }
+  }
 
   render() {
     var resArray = this.props.searchResults.results;
@@ -48,3 +55,5 @@ export default class Results extends React.Component {
     );
   }
 }
+
+export default ReactOutsideEvent(Results, ['click']);
