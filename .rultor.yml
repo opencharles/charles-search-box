@@ -12,9 +12,11 @@ install: |-
   whereis npm
   pwd
   ls
+  npm --version
   /usr/local/bin/npm --version
-  /usr/local/bin/npm --version
-  sudo /usr/local/bin/npm install
+  /usr/bin/npm --version
+  /usr/bin/X11/npm --version
+  sudo /usr/bin/npm install
   ls
   ./node_modules/.bin/webpack --version
 decrypt:
