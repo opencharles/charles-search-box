@@ -2,10 +2,6 @@
   "name": "charles-search-box",
   "version": "1.0.0",
   "description": "Component for search written in ReactJS",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/amihaiemil/charles-search-box.git"
-  },
   "main": "webpack.config.js",
   "dependencies": {
     "babel-core": "^6.17.0",
@@ -21,6 +17,7 @@
     "react": "^0.14.6",
     "react-dom": "^0.14.6",
     "react-icons": "^2.2.1",
+    "react-outside-event": "^1.2.4",
     "webpack": "^1.12.9",
     "webpack-dev-server": "^1.14.1"
   },
@@ -28,6 +25,22 @@
   "scripts": {
     "dev": "./node_modules/.bin/webpack-dev-server --content-base src --inline --hot"
   },
+  "scripts": {
+    "test": "npm run dev"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/opencharles/charles-search-box.git"
+  },
+  "keywords": [
+    "charles",
+    "search",
+    "script"
+  ],
   "author": "Mihai Andronache",
-  "license": "BSD-3-Clause"
+  "license": "BSD-3-Clause",
+  "bugs": {
+    "url": "https://github.com/opencharles/charles-search-box/issues"
+  },
+  "homepage": "https://github.com/opencharles/charles-search-box#readme"
 }
