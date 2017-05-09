@@ -8,13 +8,7 @@ install: |-
   curl -sL https://deb.nodesource.com/setup_7.x | sudo -E bash -
   sudo apt-get install -y nodejs
   sudo apt-get install jq
-  sudo node --version
-  whereis npm
-  pwd
-  ls
-  npm --version
   npm install
-  ls
   ./node_modules/.bin/webpack --version
 decrypt:
   deployment.txt: "repo/dcfg/deployment.txt.asc"
