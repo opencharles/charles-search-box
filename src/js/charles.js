@@ -11,7 +11,7 @@ if(searchDiv == null) {
     document.body.appendChild(searchDiv);
 }
 
-var search = 'http://ec2-54-68-83-8.us-west-2.compute.amazonaws.com:8080/charles-rest/api/s/';
+var search = 'http://ec2-34-209-37-87.us-west-2.compute.amazonaws.com:8080/charles-rest/api/s/';
 var repo = $('script[id=charlesscript]').attr('repo');
 var size = $('script[id=charlesscript]').attr('size');
 if(!size) {
