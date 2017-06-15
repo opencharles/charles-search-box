@@ -33,8 +33,6 @@ export default class Search extends React.Component {
       $.ajax({
 		    type : "GET",
 		    url : prependUrl ? this.props.searchUrl + query : query,
-		    //dataType : 'json',
-		    //contentType : "application/json; charset=utf-8",
 		    headers : {
 		  	  Accept : "application/json; charset=utf-8"
 		    },
@@ -74,6 +72,7 @@ export default class Search extends React.Component {
     return (
       <div>
         <Input
+          placeholder={this.props.placeholder}
           searchUrl={this.props.searchUrl}
           getSearchResults={this.getSearchResults.bind(this)}
         />

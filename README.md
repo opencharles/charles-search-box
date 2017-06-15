@@ -34,7 +34,8 @@ Found any bug/issue or simply thought of an improvement? Please, open a ticket r
 
 ## Customization
 
-  * **Size** of the page customizable with the "size" parameter -- defaults to 3.
+  * **Size** of the page customizable with the "size" parameter -- defaults to 3
+  * **Placeholder** of the input field customizable with the "placeholder" parameter -- defaults to "Search as you type..."
 
 ## Build
 
@@ -42,11 +43,10 @@ After you take down the project, simply go in its root folder and run the follow
 
 ```
 $ npm install
-$ npm run dev
+$ ./node_modules/.bin/webpack
 ```
 
-A webpack development server will start. Go at ``localhost:8080`` in your browser. There is currently some test data in some files so you can see how the widget works.
-
+Even without building, you can open index.html to see how it works (there is a build saved in the repo, not necessarily the latest).
 
 ## Contribute
 
