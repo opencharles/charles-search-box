@@ -15,9 +15,15 @@
     position: absolute;
 }
 
-@media only screen and (max-width: 400px) {
+/**
+ * Display the search widget only on screen width > 450px;
+ */
+#charles-search {
+    display: none;
+}
+@media only screen and (min-width: 450px) {
   #charles-search {
-      display: none;
+      display: block;
   }
 }
 
