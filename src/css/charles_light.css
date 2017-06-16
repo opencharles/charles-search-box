@@ -51,6 +51,7 @@
 }
 
 #charles-search-field {
+    opacity: '100%';
     width: 100%;
     border: solid #979797 1px;
     padding: 12px 10px 10px 35px;

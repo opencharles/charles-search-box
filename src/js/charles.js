@@ -23,7 +23,7 @@ if(!placeholder) {
 }
 if(repo) {
   $('head').append(
-    '<link href="http://www.amihaiemil.com/css/charles/charles_light.css" type="text/css" rel="stylesheet"/>'
+    '<link href="css/charles_light.css" type="text/css" rel="stylesheet"/>'
   )
   ReactDOM.render(
     <Search searchUrl={search + repo + "?index=0&size=" + size + "&kw="} placeholder={placeholder}/>,
