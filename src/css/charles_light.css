@@ -46,8 +46,8 @@
     height: 15px;
     background: url(http://amihaiemil.github.io/images/search.png);
     position: absolute;
-    top:  14px;
-    left: 14px;
+    top: 32%;
+    left: 5%
 }
 
 #charles-search-field {
