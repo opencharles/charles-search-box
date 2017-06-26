@@ -22,4 +22,4 @@ deploy:
     ./deploy.sh
 release:
   script:
-  - echo "Any release script here..."
+    NODE_ENV=production ./node_modules/.bin/webpack
