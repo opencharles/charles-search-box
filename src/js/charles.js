@@ -5,7 +5,7 @@ import Search from "./components/Search";
 var $ = require('jquery');
 
 
-var search = 'http://ec2-34-209-37-87.us-west-2.compute.amazonaws.com:8080/charles-rest/api/s/';
+var search = 'https://ec2-34-209-37-87.us-west-2.compute.amazonaws.com:8181/charles-rest/api/s/';
 var repo = $('script[id=charlesscript]').attr('repo');
 var size = $('script[id=charlesscript]').attr('size');
 var placeholder = $('script[id=charlesscript]').attr('placeholder');
@@ -17,7 +17,7 @@ if(!placeholder) {
 }
 if(repo) {
   $('head').append(
-    '<link href="http://www.amihaiemil.com/css/charles/charles_light.css" type="text/css" rel="stylesheet"/>'
+    '<link href="https://amihaiemil.github.io/css/charles/charles_light.css" type="text/css" rel="stylesheet"/>'
   )
   var searchDiv = document.getElementById("charles-search");
   if(searchDiv == null) {
