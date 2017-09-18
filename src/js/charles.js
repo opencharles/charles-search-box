@@ -5,7 +5,7 @@ import Search from "./components/Search";
 var $ = require('jquery');
 
 
-var search = 'http://glassfish.amihaiemil.com/charles-rest/api/s/';
+var search = 'http://ec2-34-209-37-87.us-west-2.compute.amazonaws.com:8080/charles-rest/api/s/';
 var repo = $('script[id=charlesscript]').attr('repo');
 var size = $('script[id=charlesscript]').attr('size');
 var placeholder = $('script[id=charlesscript]').attr('placeholder');
