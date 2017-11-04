@@ -17,7 +17,7 @@ if(!placeholder) {
 }
 if(repo) {
   $('head').append(
-    '<link href="https://amihaiemil.github.io/css/charles/charles_light.css" type="text/css" rel="stylesheet"/>'
+    '<link href="https://webapps.amihaiemil.com/resources/charles/charles_light.css" type="text/css" rel="stylesheet"/>'
   )
   var searchDiv = document.getElementById("charles-search");
   if(searchDiv == null) {
