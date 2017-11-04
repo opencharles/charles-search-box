@@ -17,7 +17,7 @@ Make sure you instruct [@charlesmike](https://www.github.com/charlesmike) to ind
    type="text/javascript"
    id="charlesscript"
    repo="your/github-repo"
-   src="http://www.amihaiemil.com/js/charles/charles.min.js">
+   src="https://webapps.amihaiemil.com/resources/charles/charles.min.js">
 </script>
 ```
 
