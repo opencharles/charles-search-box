@@ -23,6 +23,9 @@
   },
   "devDependencies": {},
   "scripts": {
+     "dev": "./node_modules/.bin/webpack-dev-server --content-base src --inline --hot"
+   },
+  "scripts": {
     "test": "npm run dev"
   },
   "repository": {
