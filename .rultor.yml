@@ -2,14 +2,14 @@ architect:
   - amihaiemil
 docker:
   as_root: true
-install: |-
-  sudo apt-get update
-  whereis npm
-  curl -sL https://deb.nodesource.com/setup_7.x | sudo -E bash -
-  sudo apt-get install -y nodejs
-  sudo apt-get install jq
-  npm install
-  ./node_modules/.bin/webpack --version
+#install: |-
+#  sudo apt-get update
+#  whereis npm
+#  curl -sL https://deb.nodesource.com/setup_7.x | sudo -E bash -
+#  sudo apt-get install -y nodejs
+#  sudo apt-get install jq
+#  npm install
+#  ./node_modules/.bin/webpack --version
 decrypt:
   deployment.txt: "repo/dcfg/deployment.txt.asc"
 merge:
@@ -21,6 +21,7 @@ deploy:
     #chmod +x ./deploy.sh
     #./deploy.sh
     echo "DEPLOYMENT SCRIPT COMES HERE!"
+    git status
 release:
   script: |-
     NODE_ENV=production ./node_modules/.bin/webpack
